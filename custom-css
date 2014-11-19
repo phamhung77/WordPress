@@ -1,0 +1,5 @@
+//* Load custom style sheet
+add_action( 'wp_enqueue_scripts', 'custom_load_custom_style_sheet' );
+function custom_load_custom_style_sheet() {
+wp_enqueue_style( 'custom-stylesheet', CHILD_URL . '/my.css', array(), PARENT_THEME_VERSION );
+}

@@ -1,0 +1,3 @@
+// redirect permalink from Month and name to Post name
+
+RedirectMatch permanent ^/\d\d\d\d/\d+/\d+/(.*) /$1

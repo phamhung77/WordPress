@@ -1,0 +1,15 @@
+	# Start Abuse HTTP Referrer Blocking
+	RewriteCond %{HTTP_REFERER} "^https?://(?:[^/]+\.)?semalt\.com" [NC,OR]
+	RewriteCond %{HTTP_REFERER} "^https?://(?:[^/]+\.)?kambasoft\.com" [NC,OR]
+	RewriteCond %{HTTP_REFERER} "^http?://(?:[^/]+\.)?4webmasters\.org" [NC,OR]
+	RewriteCond %{HTTP_REFERER} "^http?://(?:[^/]+\.)?webmonetizer\.net" [NC,OR]
+	RewriteCond %{HTTP_REFERER} "^http?://(?:[^/]+\.)?trafficmonetizer\.org" [NC,OR]
+	RewriteCond %{HTTP_REFERER} "^http?://(?:[^/]+\.)?buttons-for-website\.com" [NC,OR]
+	RewriteCond %{HTTP_REFERER} "^http?://(?:[^/]+\.)?traffic2money\.com" [NC,OR]
+	RewriteCond %{HTTP_REFERER} "^http?://(?:[^/]+\.)?success-seo\.org" [NC,OR]
+	RewriteCond %{HTTP_REFERER} "^http?://(?:[^/]+\.)?videos-for-your-business\.com" [NC,OR]
+	RewriteCond %{HTTP_REFERER} "^http?://(?:[^/]+\.)?100dollars-seo\.com" [NC,OR]
+
+	RewriteCond %{HTTP_REFERER} "^https?://(?:[^/]+\.)?savetubevideo\.com" [NC]
+	# End Abuse HTTP Referrer Blocking
+	RewriteRule ^.* - [F,L]

@@ -1,0 +1,1 @@
+$cat_ID = get_queried_object_id();

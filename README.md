@@ -1,2 +1,2 @@
-wordpress
+General WordPress code snippets
 =========

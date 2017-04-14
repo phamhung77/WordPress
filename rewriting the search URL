@@ -1,5 +1,3 @@
-/**** rewrite search URL. Credit: http://wpengineer.com/2258/change-the-search-url-of-wordpress/ ****/
-
 add_action( 'template_redirect', 'fb_change_search_url_rewrite' );
 function fb_change_search_url_rewrite() {
 	if ( is_search() && ! empty( $_GET['s'] ) ) {

@@ -1,0 +1,22 @@
+/**** rewrite search URL. Credit: http://wpengineer.com/2258/change-the-search-url-of-wordpress/ ****/
+
+add_action( 'template_redirect', 'fb_change_search_url_rewrite' );
+function fb_change_search_url_rewrite() {
+	if ( is_search() && ! empty( $_GET['s'] ) ) {
+		wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
+		exit();
+	}
+}
+
+add_filter('rewrite_rules_array','hp_myRewrites');
+function hp_myRewrites( $rules )
+{
+    $newrules = array();
+		$newrules['author/([0-9]+)/?'] = 'index.php?pagename=author&author_ID=$matches[1]';
+		$newrules['vi/tac-gia/([0-9]+)/?'] = 'index.php?pagename=tac-gia&author_ID=$matches[1]';
+		$newrules['search/(.?.+?)/page/([0-9]+)/?'] = 'index.php?s=$matches[1]&paged=$matches[2]';
+		$newrules['(.?.+?)/([0-9]+)/page/([0-9]+)/?'] = 'index.php?category_name=$matches[1]&post_year=$matches[2]&paged=$matches[3]';
+    $newrules['(.?.+?)/page/([0-9]+)/?'] = 'index.php?category_name=$matches[1]&paged=$matches[2]';
+    $newrules['(.?.+?)/([0-9]+)/?'] = 'index.php?category_name=$matches[1]&post_year=$matches[2]';
+    return $newrules + $rules;
+}
